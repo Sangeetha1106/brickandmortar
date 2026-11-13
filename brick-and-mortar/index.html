@@ -59,6 +59,7 @@
       <!-- Pure CSS Slide Radios -->
       <input type="radio" name="hero-slider" id="hero-slide-1" class="hero-radio" checked aria-label="Slide 1: Build Your Dream Home with Our Expertise">
       <input type="radio" name="hero-slider" id="hero-slide-2" class="hero-radio" aria-label="Slide 2: Your Dream Home Our Expertise">
+      <input type="radio" name="hero-slider" id="hero-slide-3" class="hero-radio" aria-label="Slide 3: Building Better Homes for a Brighter Tomorrow">
 
       <!-- Sliding Track -->
       <div class="carousel-track">
@@ -97,27 +98,56 @@
             </a>
           </div>
         </div>
+
+        <!-- SLIDE 3: Building Better Homes for a Brighter Tomorrow -->
+        <div class="carousel-slide slide-3">
+          <div class="banner-master-inner">
+            <img src="images/hero-banner-slide3.jpg" 
+                 alt="Brick &amp; Mortar Constructions - Building Better Homes for a Brighter Tomorrow. From concept to completion, we craft homes that bring comfort, style and long-term value to your life." 
+                 class="hero-master-img"
+                 width="1024"
+                 height="512"
+                 loading="lazy">
+            <a href="projects.html" class="slide3-btn" aria-label="Explore Our Portfolio - Brick &amp; Mortar Constructions">
+              <span class="sr-only">Explore Our Portfolio</span>
+            </a>
+            <a href="projects.html" class="slide3-stats" aria-label="View 100K+ Sq.Ft Built, 100+ Projects, 75+ Happy Clients, On-Time Delivery">
+              <span class="sr-only">View Completed Projects &amp; Statistics</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Arrow Controls -->
+      <!-- Slide 1 Active (Default) -->
+      <label for="hero-slide-3" class="carousel-arrow arrow-prev for-slide-1" aria-label="Previous Slide">‹</label>
       <label for="hero-slide-2" class="carousel-arrow arrow-next for-slide-1" aria-label="Next Slide">›</label>
+
+      <!-- Slide 2 Active -->
       <label for="hero-slide-1" class="carousel-arrow arrow-prev for-slide-2" aria-label="Previous Slide">‹</label>
+      <label for="hero-slide-3" class="carousel-arrow arrow-next for-slide-2" aria-label="Next Slide">›</label>
+
+      <!-- Slide 3 Active -->
+      <label for="hero-slide-2" class="carousel-arrow arrow-prev for-slide-3" aria-label="Previous Slide">‹</label>
+      <label for="hero-slide-1" class="carousel-arrow arrow-next for-slide-3" aria-label="Next Slide">›</label>
 
       <!-- Carousel Dot Indicators -->
       <div class="carousel-dots">
         <label for="hero-slide-1" class="carousel-dot dot-1" aria-label="Go to Slide 1"></label>
         <label for="hero-slide-2" class="carousel-dot dot-2" aria-label="Go to Slide 2"></label>
+        <label for="hero-slide-3" class="carousel-dot dot-3" aria-label="Go to Slide 3"></label>
       </div>
     </div>
 
     <!-- Semantic heading & statistics for accessibility & search engines -->
     <div class="sr-only">
       <h1>Brick &amp; Mortar Constructions - You Dream It. We Build It.</h1>
-      <p>VISION, QUALITY &amp; PRIDE. Building exceptional spaces with expertise, innovation and commitment since 2010.</p>
+      <p>Building Better Homes for a Brighter Tomorrow. From concept to completion, we craft homes that bring comfort, style and long-term value to your life.</p>
       <ul>
         <li>100K+ Sq.Ft Built</li>
         <li>100+ Projects Completed</li>
         <li>75+ Clients Satisfied</li>
+        <li>On-Time Delivery Guaranteed</li>
       </ul>
     </div>
   </section>

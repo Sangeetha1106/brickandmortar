@@ -457,9 +457,65 @@ header {
 
 .page-banner-about {
   background-image: 
-    linear-gradient(135deg, rgba(120, 26, 30, 0.52) 0%, rgba(22, 10, 10, 0.68) 100%),
-    url('images/hero-building.jpg');
-  background-position: center 35%;
+    linear-gradient(135deg, rgba(35, 15, 16, 0.16) 0%, rgba(15, 10, 10, 0.20) 100%),
+    url('images/about-banner-daylight.jpg');
+  background-position: center 32%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 78px 0 65px;
+}
+
+.page-banner-about h1 {
+  font-size: clamp(2.3rem, 4vw, 3.1rem);
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 4px 32px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.page-banner-about p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  line-height: 1.65;
+  font-weight: 600;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.page-banner-about .pill-white {
+  background: rgba(142, 36, 41, 0.9);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  padding: 6px 18px;
+  margin-bottom: 16px;
+}
+
+.page-banner-about .breadcrumb {
+  background: rgba(18, 12, 12, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.page-banner-about .breadcrumb a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.page-banner-about .breadcrumb a:hover {
+  color: var(--orange);
+}
+
+.page-banner-about .breadcrumb span.current {
+  color: #ffbe9b;
+  font-weight: 700;
 }
 
 .page-banner-services {
@@ -2972,6 +3028,11 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .page-banner-about {
+    padding: 55px 0 45px;
+    background-position: center 25%;
+  }
+
   .brand-logo {
     height: 60px;
   }

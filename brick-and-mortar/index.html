@@ -1126,6 +1126,107 @@
     </svg>
   </a>
 
+  <!-- ============ HERO CAROUSEL AUTOMATIC SLIDER ============ -->
+  <script>
+    (function() {
+      var slideIds = ['hero-slide-1', 'hero-slide-2', 'hero-slide-3'];
+      var intervalTime = 4000; // 4 seconds per slide
+      var timer = null;
+      var carousel = document.querySelector('.hero-carousel');
+      if (!carousel) return;
+
+      function getCurrentIndex() {
+        for (var i = 0; i < slideIds.length; i++) {
+          var radio = document.getElementById(slideIds[i]);
+          if (radio && radio.checked) return i;
+        }
+        return 0;
+      }
+
+      function goToSlide(index) {
+        var targetIndex = (index + slideIds.length) % slideIds.length;
+        var nextRadio = document.getElementById(slideIds[targetIndex]);
+        if (nextRadio) {
+          nextRadio.checked = true;
+          try {
+            nextRadio.dispatchEvent(new Event('change', { bubbles: true }));
+          } catch(e) {}
+        }
+      }
+
+      function nextSlide() {
+        goToSlide(getCurrentIndex() + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(getCurrentIndex() - 1);
+      }
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        timer = setInterval(nextSlide, intervalTime);
+      }
+
+      function stopAutoPlay() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      // Start automatic sliding
+      startAutoPlay();
+
+      // Pause on mouse hover & resume on mouse leave
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+
+      // Mobile Touch Swipe support
+      var touchStartX = 0;
+      var touchEndX = 0;
+      carousel.addEventListener('touchstart', function(e) {
+        if (e.changedTouches && e.changedTouches.length > 0) {
+          touchStartX = e.changedTouches[0].screenX;
+        }
+        stopAutoPlay();
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', function(e) {
+        if (e.changedTouches && e.changedTouches.length > 0) {
+          touchEndX = e.changedTouches[0].screenX;
+          var diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+          }
+        }
+        setTimeout(startAutoPlay, 1000);
+      }, { passive: true });
+
+      // When user manually clicks arrows or dots, reset the timer
+      slideIds.forEach(function(id) {
+        var radio = document.getElementById(id);
+        if (radio) {
+          radio.addEventListener('change', function() {
+            startAutoPlay();
+          });
+        }
+      });
+
+      // Pause when browser tab is inactive to save battery and resume when active
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          stopAutoPlay();
+        } else {
+          startAutoPlay();
+        }
+      });
+    })();
+  </script>
+
   <!-- WhatsApp Enquiry Form Handler -->
   <script>
     document.querySelectorAll('.enquiry-form').forEach(function(form) {

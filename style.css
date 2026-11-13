@@ -450,11 +450,12 @@ header {
   background-repeat: no-repeat;
   color: var(--white);
   padding: 85px 0 75px;
-  text-align: left;
+  text-align: center;
   border-bottom: 4px solid var(--orange);
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 380px;
 }
 
@@ -462,22 +463,24 @@ header {
   position: relative;
   z-index: 2;
   width: 100%;
-  text-align: left;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .page-banner .pill-white {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: #F4EBD9;
   color: #7A2024;
-  padding: 6px 16px;
+  padding: 6px 18px;
   border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin: 0 auto 16px auto;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -495,29 +498,30 @@ header {
 .page-banner h1 {
   font-size: clamp(2.3rem, 4.2vw, 3.2rem);
   color: #ffffff;
-  margin-bottom: 14px;
+  margin: 0 auto 14px auto;
   font-weight: 800;
-  line-height: 1.18;
+  line-height: 1.2;
   letter-spacing: -0.015em;
   max-width: 820px;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 4px 28px rgba(0, 0, 0, 0.4);
 }
 
 .page-banner p {
   color: rgba(255, 255, 255, 0.92);
   font-size: 1.08rem;
-  max-width: 660px;
-  margin: 0 0 22px 0;
+  max-width: 680px;
+  margin: 0 auto 22px auto;
   line-height: 1.68;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .page-banner .breadcrumb {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: transparent;
   border: none;
@@ -525,11 +529,11 @@ header {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.65);
   font-weight: 500;
-  text-align: left;
+  text-align: center;
 }
 
 .page-banner .breadcrumb a {
@@ -552,50 +556,50 @@ header {
   font-weight: 600;
 }
 
-/* 1. About Us Banner (Directional Cinematic Warm Overlay) */
+/* 1. About Us Banner (Balanced Warm Cinematic Overlay) */
 .page-banner-about {
   background-image: 
-    linear-gradient(90deg, rgba(18, 12, 10, 0.88) 0%, rgba(22, 14, 11, 0.80) 48%, rgba(22, 14, 11, 0.52) 100%),
+    linear-gradient(180deg, rgba(16, 11, 9, 0.76) 0%, rgba(22, 14, 11, 0.82) 50%, rgba(16, 11, 9, 0.76) 100%),
     url('images/about-banner-daylight.jpg');
   background-position: center 32%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* 2. Services Banner (Directional Cinematic Warm Overlay) */
+/* 2. Services Banner (Balanced Warm Cinematic Overlay) */
 .page-banner-services {
   background-image: 
-    linear-gradient(90deg, rgba(18, 12, 10, 0.88) 0%, rgba(22, 14, 11, 0.80) 48%, rgba(22, 14, 11, 0.52) 100%),
+    linear-gradient(180deg, rgba(16, 11, 9, 0.76) 0%, rgba(22, 14, 11, 0.82) 50%, rgba(16, 11, 9, 0.76) 100%),
     url('images/service-construction.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* 3. Projects Banner (Directional Cinematic Warm Overlay) */
+/* 3. Projects Banner (Balanced Warm Cinematic Overlay) */
 .page-banner-projects {
   background-image: 
-    linear-gradient(90deg, rgba(18, 12, 10, 0.88) 0%, rgba(22, 14, 11, 0.80) 48%, rgba(22, 14, 11, 0.52) 100%),
+    linear-gradient(180deg, rgba(16, 11, 9, 0.76) 0%, rgba(22, 14, 11, 0.82) 50%, rgba(16, 11, 9, 0.76) 100%),
     url('images/mudichur-completed.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* 4. Packages Banner (Directional Cinematic Warm Overlay) */
+/* 4. Packages Banner (Balanced Warm Cinematic Overlay) */
 .page-banner-packages {
   background-image: 
-    linear-gradient(90deg, rgba(18, 12, 10, 0.88) 0%, rgba(22, 14, 11, 0.80) 48%, rgba(22, 14, 11, 0.52) 100%),
+    linear-gradient(180deg, rgba(16, 11, 9, 0.76) 0%, rgba(22, 14, 11, 0.82) 50%, rgba(16, 11, 9, 0.76) 100%),
     url('images/elevation-contemporary.jpg');
   background-position: center 40%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* 5. Contact Banner (Directional Cinematic Warm Overlay) */
+/* 5. Contact Banner (Balanced Warm Cinematic Overlay) */
 .page-banner-contact {
   background-image: 
-    linear-gradient(90deg, rgba(18, 12, 10, 0.88) 0%, rgba(22, 14, 11, 0.80) 48%, rgba(22, 14, 11, 0.52) 100%),
+    linear-gradient(180deg, rgba(16, 11, 9, 0.76) 0%, rgba(22, 14, 11, 0.82) 50%, rgba(16, 11, 9, 0.76) 100%),
     url('images/banner-elevation.jpg');
   background-position: center center;
   background-size: cover;

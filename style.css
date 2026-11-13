@@ -227,6 +227,16 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #25D366;
   color: var(--white);
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-wa svg {
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
 }
 
 .btn-wa:hover {

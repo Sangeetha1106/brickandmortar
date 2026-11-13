@@ -53,25 +53,61 @@
     </div>
   </header>
 
-  <!-- ============ 3. HERO BANNER (Full Master Banner) ============ -->
-  <section class="hero-banner-master-wrap" id="home" style="padding: 0 !important; margin: 0 !important;">
-    <div class="banner-master-inner">
-      <img src="images/hero-banner-master.jpg" 
-           alt="Brick &amp; Mortar Constructions - You Dream It. We Build It. Transparent. Timely. Trusted. 100K+ Sq.Ft Built, 100+ Projects, 75+ Clients" 
-           class="hero-master-img"
-           width="1024"
-           height="507"
-           fetchpriority="high">
+  <!-- ============ 3. HERO BANNER CAROUSEL (Sliding Multi-Banner) ============ -->
+  <section class="hero-banner-master-wrap" id="home" aria-label="Featured Projects Banner Slider" style="padding: 0 !important; margin: 0 !important;">
+    <div class="hero-carousel">
+      <!-- Pure CSS Slide Radios -->
+      <input type="radio" name="hero-slider" id="hero-slide-1" class="hero-radio" checked aria-label="Slide 1: You Dream It. We Build It.">
+      <input type="radio" name="hero-slider" id="hero-slide-2" class="hero-radio" aria-label="Slide 2: Your Dream Home Our Expertise">
 
-      <!-- Interactive Hotspot over 'Explore Our Work →' button linking to Projects -->
-      <a href="projects.html" class="hero-master-cta-hotspot" aria-label="Explore Our Work - Projects and Gallery">
-        <span class="sr-only">Explore Our Work</span>
-      </a>
+      <!-- Sliding Track -->
+      <div class="carousel-track">
+        <!-- SLIDE 1: You Dream It. We Build It. -->
+        <div class="carousel-slide slide-1">
+          <div class="banner-master-inner">
+            <img src="images/hero-banner-master.jpg" 
+                 alt="Brick &amp; Mortar Constructions - You Dream It. We Build It. Transparent. Timely. Trusted." 
+                 class="hero-master-img"
+                 width="1024"
+                 height="512"
+                 fetchpriority="high">
+            <a href="projects.html" class="slide1-btn" aria-label="Explore Our Work - Projects and Gallery">
+              <span class="sr-only">Explore Our Work</span>
+            </a>
+            <a href="projects.html" class="slide1-stats" aria-label="View 100+ Completed Projects and Portfolio">
+              <span class="sr-only">View 100+ Completed Projects</span>
+            </a>
+          </div>
+        </div>
 
-      <!-- Interactive Hotspot over Stats linking to Projects -->
-      <a href="projects.html" class="hero-master-stats-hotspot" aria-label="View 100+ Completed Projects and Portfolio">
-        <span class="sr-only">View 100+ Completed Projects</span>
-      </a>
+        <!-- SLIDE 2: Your Dream Home Our Expertise -->
+        <div class="carousel-slide slide-2">
+          <div class="banner-master-inner">
+            <img src="images/hero-banner-slide2.jpg" 
+                 alt="Brick &amp; Mortar Constructions - Your Dream Home Our Expertise. Dream, Plan, Build." 
+                 class="hero-master-img"
+                 width="1024"
+                 height="512"
+                 loading="lazy">
+            <a href="projects.html" class="slide2-btn" aria-label="Explore Our Work - Projects and Gallery">
+              <span class="sr-only">Explore Our Work</span>
+            </a>
+            <a href="projects.html" class="slide2-stats" aria-label="View 100+ Completed Projects and Portfolio">
+              <span class="sr-only">View 100+ Completed Projects</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrow Controls -->
+      <label for="hero-slide-2" class="carousel-arrow arrow-next for-slide-1" aria-label="Next Slide">›</label>
+      <label for="hero-slide-1" class="carousel-arrow arrow-prev for-slide-2" aria-label="Previous Slide">‹</label>
+
+      <!-- Carousel Dot Indicators -->
+      <div class="carousel-dots">
+        <label for="hero-slide-1" class="carousel-dot dot-1" aria-label="Go to Slide 1"></label>
+        <label for="hero-slide-2" class="carousel-dot dot-2" aria-label="Go to Slide 2"></label>
+      </div>
     </div>
 
     <!-- Semantic heading & statistics for accessibility & search engines -->

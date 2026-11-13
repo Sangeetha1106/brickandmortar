@@ -552,11 +552,36 @@ header {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-radio {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  width: 200%;
+  animation: heroSlideAuto 10s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hero-carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel-slide {
+  width: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
 .banner-master-inner {
   position: relative;
   width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
   line-height: 0;
 }
 
@@ -564,12 +589,135 @@ header {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 1024 / 507;
+  aspect-ratio: 1024 / 512;
   object-fit: cover;
 }
 
-/* Interactive Hotspot for 'Explore Our Work →' button */
-.hero-master-cta-hotspot {
+/* Auto-Slide Keyframes */
+@keyframes heroSlideAuto {
+  0%, 45% {
+    transform: translateX(0%);
+  }
+  50%, 95% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* User Manual Override via Radio Inputs */
+#hero-slide-1:checked ~ .carousel-track {
+  animation: none;
+  transform: translateX(0%);
+}
+
+#hero-slide-2:checked ~ .carousel-track {
+  animation: none;
+  transform: translateX(-50%);
+}
+
+/* Arrow Navigation */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.25s ease;
+  user-select: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-arrow:hover {
+  background: var(--orange);
+  color: #ffffff;
+  border-color: var(--orange);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-next {
+  right: 18px;
+}
+
+.arrow-prev {
+  left: 18px;
+}
+
+.for-slide-1 {
+  display: flex;
+}
+
+.for-slide-2 {
+  display: none;
+}
+
+#hero-slide-2:checked ~ .for-slide-1 {
+  display: none;
+}
+
+#hero-slide-2:checked ~ .for-slide-2 {
+  display: flex;
+}
+
+/* Carousel Dot Indicators */
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 20;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot:hover {
+  background: #ffffff;
+}
+
+#hero-slide-1:checked ~ .carousel-dots .dot-1 {
+  background: var(--orange);
+  width: 28px;
+  border-radius: 10px;
+}
+
+#hero-slide-2:checked ~ .carousel-dots .dot-2 {
+  background: var(--orange);
+  width: 28px;
+  border-radius: 10px;
+}
+
+/* Slide 1 Hotspots */
+.slide1-btn {
   position: absolute;
   left: 2.1%;
   top: 52.3%;
@@ -582,14 +730,13 @@ header {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero-master-cta-hotspot:hover {
+.slide1-btn:hover {
   transform: scale(1.02);
   outline: 2px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 16px rgba(147, 32, 37, 0.4);
 }
 
-/* Interactive Hotspot for Stats area */
-.hero-master-stats-hotspot {
+.slide1-stats {
   position: absolute;
   left: 2.1%;
   top: 62%;
@@ -599,6 +746,56 @@ header {
   z-index: 5;
   cursor: pointer;
   background: transparent;
+}
+
+/* Slide 2 Hotspots */
+.slide2-btn {
+  position: absolute;
+  left: 5.4%;
+  top: 54.3%;
+  width: 24.5%;
+  height: 12%;
+  border-radius: 50px;
+  z-index: 5;
+  cursor: pointer;
+  background: transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slide2-btn:hover {
+  transform: scale(1.02);
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(224, 90, 43, 0.4);
+}
+
+.slide2-stats {
+  position: absolute;
+  left: 4.5%;
+  top: 68%;
+  width: 31%;
+  height: 20%;
+  border-radius: 12px;
+  z-index: 5;
+  cursor: pointer;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+  }
+  .arrow-next {
+    right: 8px;
+  }
+  .arrow-prev {
+    left: 8px;
+  }
+  .carousel-dots {
+    bottom: 8px;
+    padding: 4px 10px;
+  }
 }
 
 /* ========================================================
